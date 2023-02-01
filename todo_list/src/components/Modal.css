@@ -1,0 +1,12 @@
+.editContainer {
+    position: absolute;
+    left: 50vw;
+    width: 40vw;
+    height: 60vh;
+    background-color: #B3093F;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}

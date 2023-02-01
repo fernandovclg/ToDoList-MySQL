@@ -1,0 +1,43 @@
+.HeaderContent {
+    background-color: #B3093F;
+    width: 100%;
+    height: 15vh;
+    display: flex;
+    /* justify-content:space-around; */
+    align-items: center;
+    flex-direction: row;
+    border-radius: 50px;
+    padding-left: 50px;
+    padding-right: 50px;
+  }
+.text {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 80px;
+    font-weight: bold;
+    color:white;
+  }
+
+.button{
+    display: flex;
+    position: absolute;
+    height: 8vh;
+    width: 10vw;
+    border: 5px;
+    border-radius: 20px;
+    right:100px;
+    background-color: #451531;
+    justify-content: center;
+    align-items: center;
+    color: white;;
+    font-weight: bolder;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 30px;
+    border-width: 2px;
+    border-color: white;
+    border-style: groove;
+}

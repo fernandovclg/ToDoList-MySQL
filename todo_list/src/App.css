@@ -1,0 +1,24 @@
+.Colors{
+  color:'#A5BEFA';
+  color:'#B3093F';
+  color:'#451531';
+  color:'#64B7CC';
+  color:'#FF3877';
+}
+.App {
+  text-align: center;
+  background: linear-gradient(135deg,#64B7CC 20%, #A5BEFA 80%);
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+}
+.Body {
+  display: flex;
+  flex:1;
+  width: 100%;
+  flex-direction: column;
+  /* justify-content: space-around; */
+  align-items: center;
+}

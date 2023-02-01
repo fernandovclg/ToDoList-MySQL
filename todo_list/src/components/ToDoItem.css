@@ -1,0 +1,45 @@
+.Todoitem {
+    background-color: #FF3877;
+    width: 60%;
+    height: 10%;
+    display: flex;
+    /* justify-content:space-around; */
+    align-items: center;
+    flex-direction: row;
+    border-radius: 20px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-top: 50px;
+  }
+.CheckBox {
+    /* position: relative;
+    left: 50px; */
+    background-color: white;
+    width: 50px;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    border-radius: 5px;
+  }
+.textContainer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 40px;
+    font-weight: bold;
+    color:white;
+  }
+
+.icons {
+    display: flex;
+    flex-direction: row;
+    height: 100%;
+    width: 100px;
+    justify-content: space-between;
+    align-items: center;
+}
