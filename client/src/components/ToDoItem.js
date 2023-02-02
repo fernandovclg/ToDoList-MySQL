@@ -8,7 +8,7 @@ const ToDoItem = (props)=>{
     const [selected,setSelected]=useState(props.item.status)
 
     const EditAction = ()=>{
-        props.setEdit(props.item.id)
+        props.setEdit(props.item.idTasks)
     }
 
     return(

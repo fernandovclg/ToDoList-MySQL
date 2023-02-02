@@ -4,6 +4,7 @@ import { FiEdit } from 'react-icons/fi';
 import { RiDeleteBinLine} from 'react-icons/ri';
 import { BsCheckAll} from 'react-icons/bs';
 import React, { useState } from 'react';
+import axios, * as others from 'axios';
 
 const ToDoItem = (props)=>{
     
@@ -17,6 +18,13 @@ const ToDoItem = (props)=>{
 
     const action= ()=>{
         props.setEdit(null)
+        axios.post("http://localhost:3001/update",{
+            id: props.item.idTasks,
+            content: text,
+            status: selected,
+        }).then(
+            (response)=>{console.log(response)}
+            )
     }
 
     return(
