@@ -70,3 +70,13 @@ app.post('/update',(req,res)=>{
     console.log("id = " + id + "\ncontent = "+content + "\nstatus = "+status)
     console.log("request funcionou 2")
 })
+
+app.post('/delete',(req,res)=>{
+    const id = req.body.id
+
+    const SQL = 'DELETE FROM `todolist`.`tasks` WHERE (`idTasks` = "'+id+'");';
+
+    db.query(SQL, (err,result)=>{
+        console.log(err)
+    })
+})

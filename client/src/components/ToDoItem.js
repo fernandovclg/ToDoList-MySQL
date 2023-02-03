@@ -19,6 +19,16 @@ const ToDoItem = (props)=>{
         props.setEdit(props.item.idTasks)
     }
 
+    const Delete = ()=>{
+        axios.post("http://localhost:3001/delete",{
+                                    id: item.idTasks,
+                                }).then(
+                                    (response)=>{console.log('RESPONSE : '+response)}
+                                )
+        Lista.splice(props.index, 1);
+        props.setLista(Lista)
+    }
+
     return(
         <div className="Todoitem">
             <div className='CheckBox'
@@ -58,7 +68,7 @@ const ToDoItem = (props)=>{
             </div>
             <div className='icons'>
                 <FiEdit color='#451531' size='30' onClick={()=>EditAction()}/>
-                <RiDeleteBinLine color='#451531' size='30' onClick={()=>console.log('clicou')}/>
+                <RiDeleteBinLine color='#451531' size='30' onClick={()=>{Delete()}}/>
             </div>
             
         </div>
