@@ -36,26 +36,37 @@ app.get('/',(req,res)=>{
 })
 
 
-app.get('/insert',(req,res)=>{
-    res.send("insert")
-    const SQL = "INSERT INTO tasks (status,content) VALUES (1,'exemplo de texto 2')";
+app.get('/newTask',(req,res)=>{
+
+    const SQL = 'INSERT INTO tasks (content) VALUES ("")';
 
     db.query(SQL, (err,result)=>{
-        console.log(err)
+        if(err) console.log(err)
+        else {
+            console.log('RESULTxxx\n' + result)
+            const SQL = "SELECT * FROM todolist.tasks;";
+
+            db.query(SQL, (err,result)=>{
+                if(err) console.log(err)
+                else {
+                    console.log('RESULT\n' + result)
+                    res.send(result)}
+            })
+            }
     })
-    console.log("funcao 2 rodou")
 })
 
 app.post('/update',(req,res)=>{
     const id = req.body.id
     const content = req.body.content
+    const status = req.body.status
 
-    const SQL = "INSERT INTO tasks (status,content) VALUES (1,'exemplo de texto 2')";
+    const SQL = 'UPDATE Tasks SET content = "' +content+'", status = '+status+' WHERE idTasks = '+id+';';
 
     db.query(SQL, (err,result)=>{
         console.log(err)
     })
 
-    console.log("id = " + id + "\ncontent = "+content)
+    console.log("id = " + id + "\ncontent = "+content + "\nstatus = "+status)
     console.log("request funcionou 2")
 })

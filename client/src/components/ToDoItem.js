@@ -3,9 +3,17 @@ import { AiOutlineCheck } from 'react-icons/ai';
 import { FiEdit } from 'react-icons/fi';
 import { RiDeleteBinLine} from 'react-icons/ri';
 import { useState } from 'react';
+import axios, * as others from 'axios';
+
 const ToDoItem = (props)=>{
 
-    const [selected,setSelected]=useState(props.item.status)
+    const item = {...props.item}
+    const Lista = [...props.Lista]
+
+    const setLista=()=>{
+        Lista[props.index] = item
+        props.setLista(Lista)
+    }
 
     const EditAction = ()=>{
         props.setEdit(props.item.idTasks)
@@ -16,11 +24,31 @@ const ToDoItem = (props)=>{
             <div className='CheckBox'
                     onClick={
                         ()=>{
-                            if(selected) setSelected(false)
-                            else setSelected(true)
+                            if(!!item.status){
+                                item.status=false
+                                setLista()
+                                axios.post("http://localhost:3001/update",{
+                                    id: props.item.idTasks,
+                                    content: props.item.content,
+                                    status: false,
+                                }).then(
+                                    (response)=>{console.log('RESPONSE : '+response)}
+                                )
+                            }
+                            else{
+                                item.status=true
+                                setLista()
+                                axios.post("http://localhost:3001/update",{
+                                    id: props.item.idTasks,
+                                    content: props.item.content,
+                                    status: true,
+                                }).then(
+                                    (response)=>{console.log('RESPONSE : '+response)}
+                                )
+                            } 
                         }
                     }>
-                        {selected===true
+                        {item.status==true
                         ?<AiOutlineCheck color='black' size='30'/>
                         :<></>
                         }

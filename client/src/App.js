@@ -54,14 +54,13 @@ function App() {
 
   return (
     <div className="App">
-      <Header></Header>
-      {/* <Edit></Edit> */}
+      <Header setEdit={setEdit} Lista={Lista} setLista={setLista}/>
       <div className='Body'>
         {
           Lista.map(
-            (item)=>{
-                if(edit===item.idTasks) return <Edit item={item} setEdit={setEdit}/>
-                else            return <ToDoItem item={item} setEdit={setEdit}/>
+            (item,index)=>{
+                if(edit===item.idTasks) return <Edit item={item} index={index} setEdit={setEdit} Lista={Lista} setLista={setLista}/>
+                else                return <ToDoItem item={item} index={index} setEdit={setEdit} Lista={Lista} setLista={setLista}/>
               }
             
           )
